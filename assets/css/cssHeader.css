@@ -9,19 +9,37 @@ and open the template in the editor.
 */
 
 header{
-    height: 150px;
-    width: 1920px;
-}
-#text{
-    text-align: center;
-}
-
-header{
     position: fixed;
     top: 0;
     width: 100%;
     opacity: 0.85;
     background-color: lightgoldenrodyellow;
     font-family: 'Galada', cursive;
+    color: #8d453d;
+}
+
+h2{
+    float: left;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Galada', cursive;
+    color: #8d453d;
+}
+
+#name{
+    padding-left: 48%;
+    padding-right: 485px;
+}
+
+.otherMenu{
+    padding-right: 100px;
+}
+
+a:link {
+    text-decoration: none;
+    color: #8d453d;
+}
+
+a:visited {
     color: #8d453d;
 }
