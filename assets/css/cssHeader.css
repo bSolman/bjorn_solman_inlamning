@@ -11,19 +11,17 @@ and open the template in the editor.
 header{
     height: 150px;
     width: 1920px;
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
 }
 #text{
     text-align: center;
 }
 
-footer{
-    height: 150px;
-    width: 1920px;
-    background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);
-}
-#footerF{
-    height: 150px;
-    width: 1920px;
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.85;
+    background-color: lightgoldenrodyellow;
+    font-family: 'Galada', cursive;
+    color: #8d453d;
 }
