@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2018-maj-16, 19:29:44
+    Author     : Björn Solman
+*/
+
+header{
+    height: 150px;
+    width: 1920px;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+#text{
+    text-align: center;
+}
+
+footer{
+    height: 150px;
+    width: 1920px;
+    background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);
+}
+#footerF{
+    height: 150px;
+    width: 1920px;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}

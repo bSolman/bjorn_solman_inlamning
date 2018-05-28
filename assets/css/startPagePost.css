@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2018-maj-23, 12:27:38
+    Author     : Björn Solman
+*/
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.85;
+    background-color: lightgoldenrodyellow;
+    font-family: 'Galada', cursive;
+    color: #8d453d;
+}
+
+h2{
+    float: left;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Galada', cursive;
+    color: #8d453d;
+}
+
+#name{
+    padding-left: 48%;
+    padding-right: 850px;
+}
+
+.otherMenu{
+    padding-right: 100px;
+}
+
+a:link {
+    text-decoration: none;
+    color: #8d453d;
+}
+
+a:visited {
+    color: #8d453d;
+}
