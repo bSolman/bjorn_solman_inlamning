@@ -25,15 +25,4 @@ if(isset($_POST['password'])){
     else {
        header('Location: index.php');
     }
-   //echo $storedSalt.' '.$storedSaltyPass;
-   //$loginSuccess = login($passw, $userName);
-   
-   if($loginSuccess){
-      // $my_var = file_get_contents('posts.php');
-      // echo $my_var;
-   }
-   else{
-       //$my_var = file_get_contents('login.html');
-       echo $my_var;
-   }
 }
