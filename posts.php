@@ -6,10 +6,8 @@
  * and open the template in the editor.
  */
 session_start();
-include 'include/wievs/_header.php';
 echo $_SESSION['UserName'];
 if($_SESSION['loggedIn'] === TRUE){
-    echo 'logged in';
     loadPage();
 }
 else{
@@ -17,6 +15,17 @@ else{
 }
 
 function loadPage(){
-    echo '<link href="assets/css/post.css" rel="stylesheet" type="text/css"/>
-        <body background="assets/img/post-it.jpg"></body>';
+    echo '<    <head>
+        <title>Post-It</title>
+        <meta charset="UTF-8">
+        <link href="assets/css/post.css" rel="stylesheet" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body background="assets/img/post-it.jpg">
+        <header>
+            <h2 id="name">Post-It</h2>
+            <h2><a href="logout-process.php">Logga ut</a></h2>
+        </header>
+        <div></div>
+    </body>';
 }
