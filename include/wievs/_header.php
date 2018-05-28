@@ -14,7 +14,9 @@ function createHeader(){
     <link rel="stylesheet" href="assets/css/cssHeader.css" type="text/css">
     </head>
     <div id="header">
-        <header id="text">Rubrikjävel</header>
+        <header id="text">
+            <h2 id"name">Post-It</h2>
+        </header>
     </div>
     ';
 }
