@@ -16,8 +16,7 @@ function isLoggedIn(){
         echo $homepage;
     }
     else{
-        $homepage = file_get_contents('startPagePost.html');
-        echo $homepage;
+        header('location: startPagePost.html');
     }
 }
 
