@@ -1,43 +1,32 @@
-
-#textDiv{
-    margin-top: 100px;
-    border-radius: 30px;
-    background: white;
-    padding: 20px;
-    width: 800px;
-    height: 450px;
-    opacity: .9;
-    margin-left: 30%;
-    border: 1px solid black
-}
-
 header{
     position: fixed;
     top: 0;
     width: 100%;
     opacity: 0.85;
-    background-color: white;
+    background-color: lightgoldenrodyellow;
+    font-family: 'Galada', cursive;
     color: #8d453d;
 }
 
-h1{
-    text-align: center;
+h2{
     float: left;
-}
-
-h3{
     text-align: center;
     font-size: xx-large;
     font-family: 'Galada', cursive;
     color: #8d453d;
 }
 
-#logo{
+#name{
     padding-left: 48%;
-    padding-right: 300px;
+    padding-right: 800px;
 }
 
-#text{
-    padding-right: 50px;
+a:link {
+    text-decoration: none;
+    color: #8d453d;
+}
+
+a:visited {
+    color: #8d453d;
 }
 
