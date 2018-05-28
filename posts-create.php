@@ -15,4 +15,5 @@ if($_SESSION['loggedIn']){
     echo $userID;
     echo $message;
     addComment($message, $userID);
+    header('Location: posts.php');
 }
