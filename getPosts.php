@@ -6,5 +6,5 @@
  * and open the template in the editor.
  */
 include 'dbConnect.php';
-getComments();
+echo getComments();
 
