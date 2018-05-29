@@ -27,10 +27,11 @@ function loadPage(){
             <h2><a href="logout-process.php">Logga ut</a></h2>
         </header>
         <div id="postArea">
+            <h2 id="postitLogo">Post-It</h2>
             <form id="messageBox" name="messageBox" action="posts-create.php" method="post">
             </form>
-            <textarea name="comment" form="messageBox"></textarea>
-            <input type="submit" form="messageBox" value="Skicka"/>
+            <textarea name="comment" id="comment" form="messageBox"></textarea>
+            <input type="submit" id="submitBtn" form="messageBox" value="Skicka"/>
         </div>
     </body>';
 }
