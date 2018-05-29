@@ -32,6 +32,7 @@ function loadPage(){
             </form>
             <textarea name="comment" id="comment" form="messageBox"></textarea>
             <input type="submit" id="submitBtn" form="messageBox" value="Skicka"/>
+            <div id="printPost"></div>
         </div>
     </body>';
 }
