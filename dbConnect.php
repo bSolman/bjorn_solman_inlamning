@@ -67,15 +67,15 @@ function selectFromWhere($select, $from, $where, $data){
 }
     
 function getComments(){
-    $query = "SELECT * FROM Comments";
+    $query = "SELECT userName, message from posts
+              JOIN users ON posts.userID = users.ID";
     $result = connect()->query($query);
     while ( $row = $result->fetch_assoc()){
         echo "<div class='comments'>";
-                echo $row["email"].": ";
-                echo $row["timestamp"]."<br>";
-                echo $row["comment"]."<br>";
+            echo $row["userName"].": ";
+            echo $row["message"]."<br>";
         echo "</div>";
-        }
+    }
 }
 		
 function searchRunMate ($name){
