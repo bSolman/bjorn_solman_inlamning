@@ -71,10 +71,10 @@ function getComments(){
               JOIN users ON posts.userID = users.ID";
     $result = connect()->query($query);
     while ($row = $result->fetch_assoc()){
-        echo "<div class='comments'>";
-            echo $row["userName"].": ";
-            echo $row["message"]."<br>";
-        echo "</div>";
+        echo '<tr>';
+            echo '<td>'.'<h3>'.$row["userName"].'</h3>'.'</td>';
+            echo '<td>'.'<h3>'.$row["message"].'</h3><td>';
+        echo '</tr>';
     }
 }
 		
