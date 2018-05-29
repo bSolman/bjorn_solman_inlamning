@@ -15,6 +15,7 @@ if(isset($_POST['userName'])){
     $saltyPass = trim(createSaltyPassword($salt, $password));
     $hashedPassw = trim(createSaltyPassword($salt, $password));
     insertUserData($userName, $email, $hashedPassw, $salt);
-    header('location: login.html');
+    echo 'Du är nu registrerad';
+    header('Refresh: 3; URL=index.php');
 }
 
