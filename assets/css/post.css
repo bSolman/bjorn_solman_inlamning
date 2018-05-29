@@ -1,3 +1,19 @@
+#printPost{
+    margin-top: 20px;
+    padding-left: 300px;
+    border-top: #8d453d solid 3px;
+}
+
+td{
+    padding-top: 10px;
+    width: 500px;
+}
+
+h3{
+    font-family: 'Galada', cursive;
+    color: #8d453d;
+}
+
 header{
     position: fixed;
     top: 0;
@@ -32,11 +48,10 @@ a:visited {
 
 #postArea{
     opacity: .5;
-    background-color: whitesmoke;
-    width: 800px;
+    width: 1075px;
     height: 250px;
-    margin-left: 250px;
-    margin-top: 150px;
+    margin-left: 500px;
+    margin-top: 350px;
 }
 
 #comment{
