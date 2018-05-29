@@ -2,4 +2,4 @@
 
 include '../../dbConnect.php';
 
-
+getComments();
