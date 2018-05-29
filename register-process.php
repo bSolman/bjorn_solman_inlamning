@@ -15,5 +15,6 @@ if(isset($_POST['userName'])){
     $saltyPass = trim(createSaltyPassword($salt, $password));
     $hashedPassw = trim(createSaltyPassword($salt, $password));
     insertUserData($userName, $email, $hashedPassw, $salt);
+    header('location: login.html');
 }
 
