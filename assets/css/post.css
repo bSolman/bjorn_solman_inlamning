@@ -18,7 +18,7 @@ h2{
 
 #name{
     padding-left: 48%;
-    padding-right: 800px;
+    padding-right: 450px;
 }
 
 a:link {
@@ -31,10 +31,28 @@ a:visited {
 }
 
 #postArea{
-    float: left;
+    opacity: .5;
+    background-color: whitesmoke;
     width: 800px;
     height: 250px;
-    margin-left: 500px;
-    margin-top: 500px;
+    margin-left: 250px;
+    margin-top: 150px;
+}
+
+#comment{
+    width: 75%;
+    height: 15%
+}
+
+#submitBtn{
+    float: right;
+    padding-top: 0%;
+    margin-top: 0%;
+    width: 22%;
+    height: 17%;
+}
+
+#postitLogo{
+    padding-left: 47%;
 }
 
