@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 $(document).ready(function(){
-    $("updateBtn").click(function(){
-        $("printPost").load("getPost.php");
+    $("#updateBtn").click(function(){
+        $.ajax({
+            url: 'getPosts.php',
+            success: function(data){
+                $('#printPost').php(data);
+            }
+        });
     });
 });
 
