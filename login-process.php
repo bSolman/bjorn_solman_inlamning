@@ -9,8 +9,8 @@ session_start();
 include 'dbConnect.php';
 
 if(isset($_POST['password'])){
-    $passw = testData($_POST['password']);
-    $userName = testData($_POST['email']);
+    $passw = mysqli_escape_string(connect(),testData($_POST['password']));
+    $userName = mysqli_escape_string(connect(), testData($_POST['email']));
     $storedSaltyPass = trim(selectFromWhere('passw', 'users', 'email', $userName));
     $storedSalt = trim(selectFromWhere('salt', 'users', 'email', $userName));
     $inputSaltyPass = createSaltyPassword($storedSalt, $passw);
