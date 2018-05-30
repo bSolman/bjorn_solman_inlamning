@@ -8,9 +8,9 @@
 include 'dbConnect.php';
 
 if(isset($_POST['userName'])){
-    $email = testData($_POST['email']);
-    $password = testData($_POST['password']);
-    $userName = testData($_POST['userName']);
+    $email = mysqli_escape_string( connect(), testData($_POST['email']));
+    $password = mysqli_escape_string( connect(), testData($_POST['password']));
+    $userName = mysqli_escape_string( connect(), testData($_POST['userName']));
     if(selectFromWhere('email', 'users', 'email', $email) === "" || selectFromWhere('email', 'users', 'email', $email) === NULL){
         $salt = trim(createSalt());
         $saltyPass = trim(createSaltyPassword($salt, $password));
@@ -21,7 +21,7 @@ if(isset($_POST['userName'])){
     }
     else{
         echo 'Du är inte registrerad! Användarnamnet finns redan.';
-       header('Refresh: 3; URL=index.php');
+        header('Refresh: 3; URL=index.php');
     }
 
 }
