@@ -42,13 +42,6 @@ function addComment($message, $userID){
     connect() -> query ($query);
 }
 
-function checkEmail($email){
-    $queryCheck = "SELECT email FROM users WHERE email = ('".testData($email)."')";
-    $exist = connect() -> query ( $queryCheck ) ;
-    $row = $exist->fetch_assoc();
-    return $exist = $row["email"];
-}
-
 function selectFromWhere($select, $from, $where, $data){
     $query = "SELECT ".testData($select)." FROM ".testData($from)." WHERE ".testData($where)." = ('".testData($data)."')";
     $result = connect()->query($query);
