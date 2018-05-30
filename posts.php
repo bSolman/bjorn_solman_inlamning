@@ -8,13 +8,14 @@
 session_start();
 
 if($_SESSION['loggedIn'] === TRUE){
-    loadPage();
+    $name = $_SESSION['UserName'];
+    loadPage($name);
 }
 else{
     header('Location: index.php');
 }
 
-function loadPage(){
+function loadPage($name){
     echo '
         <head>
             <title>Post-It</title>
@@ -31,13 +32,13 @@ function loadPage(){
                 <h2><a href="logout-process.php">Logga ut</a></h2>
             </header>
             <div id="postArea">
+                <h2 id="userId">Välkommen: '.$name.'</h2>
                 <h2 id="postitLogo">Post-Area</h2>
                 <form id="messageBox" name="messageBox" action="posts-create.php" method="post">
                 </form>
                 <textarea name="comment" id="comment" form="messageBox"></textarea>
                 <input type="submit" id="submitBtn" form="messageBox" value="Skicka"/>
                 <div id="printPost"></div>
-                <button id="updateBtn">För att läsa</button>
             </div>
         </body>';
 }
