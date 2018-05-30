@@ -14,6 +14,7 @@ if(isset($_POST['password'])){
     $storedSaltyPass = trim(selectFromWhere('passw', 'users', 'email', $userName));
     $storedSalt = trim(selectFromWhere('salt', 'users', 'email', $userName));
     $inputSaltyPass = createSaltyPassword($storedSalt, $passw);
+    
     if($inputSaltyPass === $storedSaltyPass){
        $_SESSION['loggedIn'] = TRUE;
        $_SESSION['UserName'] = selectFromWhere('userName', 'users', 'email', $userName);
