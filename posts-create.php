@@ -9,7 +9,7 @@
 session_start();
 include 'dbConnect.php';
 if($_SESSION['loggedIn']){
-    $message = mysqli_escape_string(connect(), testData($_POST['comment']));
+    $message = mysqli_escape_string(mysqliConnection(), testData($_POST['comment']));
     if($message === "" || $message === NULL){
         header('Location: posts.php');
     }

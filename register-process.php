@@ -8,9 +8,9 @@
 include 'dbConnect.php';
 
 if(isset($_POST['email'])){
-    $email = mysqli_escape_string( connect(), testData($_POST['email']));
-    $password = mysqli_escape_string( connect(), testData($_POST['password']));
-    $userName = mysqli_escape_string( connect(), testData($_POST['userName']));
+    $email = mysqli_escape_string( mysqliConnection(), testData($_POST['email']));
+    $password = mysqli_escape_string( mysqliConnection(), testData($_POST['password']));
+    $userName = mysqli_escape_string( mysqliConnection(), testData($_POST['userName']));
     
     if($userName === "" || $userName === NULL){
         echo 'Du har inte angett något användarnamn';

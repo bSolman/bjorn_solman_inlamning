@@ -1,5 +1,5 @@
 <?php 
-function connect(){
+function mysqliConnection(){
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -34,17 +34,17 @@ function createSaltyPassword($salt, $passw){
 //lägger till användare i databasen
 function insertUserData($name, $email, $pword, $salt){
     $query =  "INSERT INTO users (userName, email, passw, salt) VALUES ('". testData($name) ." ', '". testData($email) ." ','". testData($pword) ." ', '". testData($salt) ." ')";
-    connect() -> query ($query);
+    mysqliConnection() -> query ($query);
 }
 
 function addComment($message, $userID){
     $query =  "INSERT INTO posts (message, userID) VALUES ('". testData($message) ." ', '". testData($userID)."')";
-    connect() -> query ($query);
+    mysqliConnection() -> query ($query);
 }
 
 function selectFromWhere($select, $from, $where, $data){
     $query = "SELECT ".testData($select)." FROM ".testData($from)." WHERE ".testData($where)." = ('".testData($data)."')";
-    $result = connect()->query($query);
+    $result = mysqliConnection()->query($query);
     $row = $result->fetch_assoc();
     return $row[$select];
 }
@@ -53,7 +53,7 @@ function getComments(){
     $query = "SELECT userName, message from posts
               JOIN users ON posts.userID = users.ID";
     
-    $result = connect()->query($query);
+    $result = mysqliConnection()->query($query);
     while ($row = $result->fetch_assoc()){
         echo '<tr>';
             echo '<td>'.'<h3>'.$row["userName"].'</h3>'.'</td>';
