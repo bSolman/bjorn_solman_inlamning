@@ -7,11 +7,20 @@
  */
 include 'dbConnect.php';
 
-if(isset($_POST['userName'])){
+if(isset($_POST['email'])){
     $email = mysqli_escape_string( connect(), testData($_POST['email']));
     $password = mysqli_escape_string( connect(), testData($_POST['password']));
     $userName = mysqli_escape_string( connect(), testData($_POST['userName']));
-    if(selectFromWhere('email', 'users', 'email', $email) === "" || selectFromWhere('email', 'users', 'email', $email) === NULL){
+    
+    if($userName === "" || $userName === NULL){
+        echo 'Du har inte angett något användarnamn';
+        header('Refresh: 3; URL=index.php');
+    }
+    else if($email === "" || $email === NULL){
+        echo 'Du har inte angett någon epost';
+        header('Refresh: 3; URL=index.php');
+    }
+    else if(selectFromWhere('email', 'users', 'email', $email) === "" || selectFromWhere('email', 'users', 'email', $email) === NULL){
         $salt = trim(createSalt());
         $saltyPass = trim(createSaltyPassword($salt, $password));
         $hashedPassw = trim(createSaltyPassword($salt, $password));
@@ -23,6 +32,5 @@ if(isset($_POST['userName'])){
         echo 'Du är inte registrerad! Användarnamnet finns redan.';
         header('Refresh: 3; URL=index.php');
     }
-
 }
 
