@@ -69,10 +69,10 @@ a:visited {
     padding-top: 0%;
     margin-top: 0%;
     width: 22%;
-    height: 17%;
+    height: 17.3%;
 }
 
 #postitLogo{
-    padding-left: 47%;
+    float: right;
 }
 
