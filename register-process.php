@@ -14,11 +14,16 @@ if(isset($_POST['email'])){
     
     if($userName === "" || $userName === NULL){
         echo 'Du har inte angett något användarnamn';
-        header('Refresh: 3; URL=register.php');
+        header('Refresh: 3; URL=register.html');
     }
-    else if($email === "" || $email === NULL){
+    else if($email === "" || $email === NULL || !preg_match("^\S+@\S+$^",$email)){
         echo 'Du har inte angett någon epost';
-        header('Refresh: 3; URL=register.php');
+        header('Refresh: 3; URL=register.html');
+    }
+    
+    else if($password === "" || $password === NULL){
+        echo 'Du har inte angett något lösenord';
+        header('Refresh: 3; URL=register.html');
     }
     else if(selectFromWhere('email', 'users', 'email', $email) === "" || selectFromWhere('email', 'users', 'email', $email) === NULL){
         $salt = trim(createSalt());
