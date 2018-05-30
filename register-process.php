@@ -14,11 +14,11 @@ if(isset($_POST['email'])){
     
     if($userName === "" || $userName === NULL){
         echo 'Du har inte angett något användarnamn';
-        header('Refresh: 3; URL=index.php');
+        header('Refresh: 3; URL=register.php');
     }
     else if($email === "" || $email === NULL){
         echo 'Du har inte angett någon epost';
-        header('Refresh: 3; URL=index.php');
+        header('Refresh: 3; URL=register.php');
     }
     else if(selectFromWhere('email', 'users', 'email', $email) === "" || selectFromWhere('email', 'users', 'email', $email) === NULL){
         $salt = trim(createSalt());
