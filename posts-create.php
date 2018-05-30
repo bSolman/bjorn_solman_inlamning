@@ -9,7 +9,7 @@
 session_start();
 include 'dbConnect.php';
 if($_SESSION['loggedIn']){
-    $message = $_POST['comment'];
+    $message = testData($_POST['comment']);
     echo $_SESSION['UserName'];
     $userID = selectFromWhere('ID', 'users', 'email', $_SESSION['email']);
     echo $userID;
