@@ -9,11 +9,13 @@
 session_start();
 include 'dbConnect.php';
 if($_SESSION['loggedIn']){
-    $message = testData($_POST['comment']);
-    echo $_SESSION['UserName'];
-    $userID = selectFromWhere('ID', 'users', 'email', $_SESSION['email']);
-    echo $userID;
-    echo $message;
-    addComment($message, $userID);
-    header('Location: posts.php');
+    $message = mysqli_escape_string(connect(), testData($_POST['comment']));
+    if($message === "" || $message === NULL){
+        header('Location: posts.php');
+    }
+    else {
+        $userID = selectFromWhere('ID', 'users', 'email', $_SESSION['email']);
+        addComment($message, $userID);
+        header('Location: posts.php');
+    }
 }
