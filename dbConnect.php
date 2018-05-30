@@ -26,41 +26,31 @@ function createSalt(){
     return $randomSalt;
 }
 
-function login($passw, $userName){
-    $loginStatus = FALSE;
-    $hashed = createSaltyPassword($salt, $passw);
-    echo strlen ($hashed);
-
-    echo $loginStatus;
-    return loginStatus;
-}
-
 function createSaltyPassword($salt, $passw){
-    $salt_passw = sha1($passw.$salt);
+    $salt_passw = sha1(testData($passw).testData($salt));
     return $salt_passw;
 }
                 
 //lägger till användare i databasen
 function insertUserData($name, $email, $pword, $salt){
-    $query =  "INSERT INTO users (userName, email, passw, salt) VALUES ('". $name ." ', '". $email ." ','". $pword ." ', '". $salt ." ')";
+    $query =  "INSERT INTO users (userName, email, passw, salt) VALUES ('". testData($name) ." ', '". testData($email) ." ','". testData($pword) ." ', '". testData($salt) ." ')";
     connect() -> query ($query);
 }
 
 function addComment($message, $userID){
-    echo $message;
-    $query =  "INSERT INTO posts (message, userID) VALUES ('". $message ." ', '". $userID."')";
+    $query =  "INSERT INTO posts (message, userID) VALUES ('". testData($message) ." ', '". testData($userID)."')";
     connect() -> query ($query);
 }
 
 function checkEmail($email){
-    $queryCheck = "SELECT email FROM RunMate WHERE email = ('".$email."')";
+    $queryCheck = "SELECT email FROM users WHERE email = ('".testData($email)."')";
     $exist = connect() -> query ( $queryCheck ) ;
     $row = $exist->fetch_assoc();
     return $exist = $row["email"];
 }
 
 function selectFromWhere($select, $from, $where, $data){
-    $query = "SELECT ".$select." FROM ".$from." WHERE ".$where." = ('".$data."')";
+    $query = "SELECT ".testData($select)." FROM ".testData($from)." WHERE ".testData($where)." = ('".testData($data)."')";
     $result = connect()->query($query);
     $row = $result->fetch_assoc();
     return $row[$select];
@@ -69,6 +59,7 @@ function selectFromWhere($select, $from, $where, $data){
 function getComments(){
     $query = "SELECT userName, message from posts
               JOIN users ON posts.userID = users.ID";
+    
     $result = connect()->query($query);
     while ($row = $result->fetch_assoc()){
         echo '<tr>';
@@ -77,7 +68,10 @@ function getComments(){
         echo '</tr>';
     }
 }
-		
-function searchRunMate ($name){
-    return selectFromWhere("name", "RunMate", "name",  $name);
+
+function testData($inputData){
+    $inputData = trim($inputData);
+    $inputData = stripcslashes($inputData);
+    $inputData = htmlspecialchars($inputData);
+    return $inputData;
 }
