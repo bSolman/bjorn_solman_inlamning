@@ -31,13 +31,13 @@ function loadPage(){
                 <h2><a href="logout-process.php">Logga ut</a></h2>
             </header>
             <div id="postArea">
-                <h2 id="postitLogo">Post-It</h2>
+                <h2 id="postitLogo">Post-Area</h2>
                 <form id="messageBox" name="messageBox" action="posts-create.php" method="post">
                 </form>
                 <textarea name="comment" id="comment" form="messageBox"></textarea>
                 <input type="submit" id="submitBtn" form="messageBox" value="Skicka"/>
-                <div id="printPost">Post area</div>
-                <button id="updateBtn">Click</button>
+                <div id="printPost"></div>
+                <button id="updateBtn">För att läsa</button>
             </div>
         </body>';
 }
