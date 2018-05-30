@@ -1,3 +1,8 @@
+#updateBtn{
+    float: right;
+    height: 50px;
+    width: 100px;
+}
 #printPost{
     margin-top: 20px;
     padding-left: 300px;
